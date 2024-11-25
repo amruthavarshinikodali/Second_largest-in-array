@@ -1,0 +1,17 @@
+class Solution:
+    def getSecondLargest(self, arr):
+        l=len(arr)
+        max=float('-inf') 
+        sec_max=float('-inf')
+        if l < 2:
+            return -1 
+        for i in arr:
+            if i > max:
+                sec_max=max
+                max=i
+            elif i > sec_max and i !=max:
+                sec_max=i
+        if sec_max==float('-inf'):
+            return -1 
+        else:
+            return sec_max
